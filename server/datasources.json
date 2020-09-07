@@ -1,0 +1,17 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "my-lib": {
+    "host": "localhost",
+    "port": 3306,
+    "url": "",
+    "database": "my-lib-system",
+    "password": "hansani",
+    "name": "my-lib",
+    "user": "root",
+    "connector": "mysql",
+    "createDatabase": true
+  }
+}

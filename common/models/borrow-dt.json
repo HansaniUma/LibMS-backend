@@ -1,0 +1,62 @@
+{
+  "name": "borrowDt",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+
+  "foreignKey": {
+    "fk_borrowDt_memId": {
+      "name": "fk_borrowDt_memId",
+      "foreignKey": "membersId",
+      "entityKey": "id",
+      "entity": "members"
+    },
+    "fk_borrowDt_bookId": {
+      "name": "fk_borrowDt_bookId",
+      "foreignKey": "booksId",
+      "entityKey": "id",
+      "entity": "books"
+    }
+  },
+
+
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
+    },
+    "issuedDate": {
+      "type": "date",
+      "required": true
+    },
+    "duration": {
+      "type": "number",
+      "required": true
+    },
+    "returnedDate": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "members": {
+      "type": "belongsTo",
+      "model": "members",
+      "primaryKey": "id",
+      "foreignKey": "membersId",
+      "required": true
+    },
+    "books": {
+      "type": "belongsTo",
+      "model": "books",
+      "primaryKey": "id",
+      "foreignKey": "booksId",
+      "required": true
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

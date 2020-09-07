@@ -1,0 +1,40 @@
+{
+  "name": "books",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "author": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "number",
+      "required": true
+    },
+    "availability": {
+      "type": "boolean",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "borrowDts": {
+      "type": "hasMany",
+      "model": "borrowDt",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
